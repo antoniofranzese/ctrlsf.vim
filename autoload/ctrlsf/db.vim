@@ -197,7 +197,11 @@ func! s:ParseOneLine(line) abort
         return
     endif
 
-    let [fname, lnum, content] = s:DefactorizeLine(a:line, s:current_file)
+    let [fname, lnum, content] = s:DefactorizeLine( substitute( a:line, "\r$", "", "" ), s:current_file)
+
+	if empty( fname )
+		return
+	endif
 
     if fname !=# s:current_file
         let s:next_file = fname
