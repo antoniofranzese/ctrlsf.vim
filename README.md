@@ -24,6 +24,7 @@ A demo shows how to rename a method named `FocusWindow()` to `Focus()` in multip
 
 - [Features](#features)
 - [Installation](#installation)
+  - [RipGrep](#ripgrep) 
 - [Quick Start](#quick-start)
 - [Key Maps](#key-maps)
 - [Use Your Own Map](#use-your-own-map)
@@ -64,6 +65,17 @@ A demo shows how to rename a method named `FocusWindow()` to `Focus()` in multip
     ```
 
 3. Read *Quick Start* for how to use.
+
+### RipGrep
+
+To avoid problems with the line endings, use the following configuration:
+
+  ```vim
+  let g:ctrlsf_backend = 'rg'
+  let g:ctrlsf_extra_backend_args = {
+    \ 'rg': '--block-buffered --crlf'
+    \ }
+  ```
 
 ## Quick Start
 
